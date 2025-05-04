@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const Ticket = require('./models/ticket')
+const errorHandler = require('./middleware/errorHandler')
 
 const app = express()
 
@@ -121,6 +122,8 @@ app.get('/api/info', (request, response, next) => {
         })
         .catch(error => next(error));
 });
+
+app.use(errorHandler)
 
 // Start server
 const PORT = process.env.PORT || 3001
