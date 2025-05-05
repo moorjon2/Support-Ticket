@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:3001/api/tickets';
+const baseUrl = '/api/tickets';
 
 // GET all tickets
 const getAll = () => {
