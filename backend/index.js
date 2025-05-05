@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors')
 const path = require('path')
 
 const Ticket = require('./models/ticket')
@@ -9,6 +10,7 @@ const unknownEndpoints = require('./middleware/unknownEndpoints')
 const errorHandler = require('./middleware/errorHandler')
 
 const app = express()
+app.use(cors())
 
 // --- MongoDB connection ---
 mongoose.set('strictQuery', false);
